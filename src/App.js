@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import {Link, BrowserRouter as Router,} from "react-router-dom";
-import {Button} from "antd";
-
+import {Layout} from "antd";
+import {Route, Switch} from "react-router";
+import RouterHome from "./RouterHome";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Layout>
         <Router>
-        <Link to={'https://reactjs.org'}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        <Button type={'primary'}>  Learn React</Button>
-        </Link>
+          <Switch>
+            <Route
+                path={"/:cat/"}
+                render={(route) => <RouterHome {...route} />}
+            />
+            <Route path={"/"} render={(route) => <RouterHome {...route} />}/>
+          </Switch>
         </Router>
-      </header>
-    </div>
+      </Layout>
   );
 }
 
