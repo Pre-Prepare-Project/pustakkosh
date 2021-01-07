@@ -1,0 +1,40 @@
+.ant-card {
+    margin-bottom: 20px !important;
+}
+
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+    padding: 6px 10px !important;
+    word-break: inherit !important;
+}
+
+.ant-form-item {
+    margin-bottom: 12px !important;
+}
+
+.ant-table {
+    overflow-x: scroll !important;
+}
+
+.ant-form-item-control {
+    line-height: 30px;
+}
+
+.ant-radio-button-wrapper {
+    height: 100% !important;
+}
+
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+.ant-list-item .ant-row {
+    width: 100%;
+}
+
+.mb-0 {
+    margin-bottom: 0px;
+}
+
+.menu-outline:hover {
+    background-color: #021529 !important
+}

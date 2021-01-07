@@ -13,7 +13,6 @@ class AppHeader extends Component {
         this.state = {
             mobileMenuOpen: false,
             isMobileMenu: false,
-            signedInUserId: true,
             authUser: {},
             tab: 0,
         }
@@ -44,77 +43,60 @@ class AppHeader extends Component {
     }
     renderNavLinks = () => {
         let {HOME, ACCOUNT, SIGN_IN, PROJECTS} = routes;
-        let signedInUserId = this.state;
-        if (signedInUserId) {
-            return [
-                <Menu.Item key={0}>
-                    <Link
-                        onClick={() => this.toggleMobileMenuOpen()}
-                        to={HOME.route}
-                    >
-                        {HOME.link}
-                    </Link>
-                </Menu.Item>,
-                <Menu.Item key={1}>
-                    <Link
-                        onClick={() => this.toggleMobileMenuOpen()}
-                        to={`${ACCOUNT.route}/${signedInUserId}`}
-                    >
-                        {ACCOUNT.link}
-                    </Link>
-                </Menu.Item>,
-                <Menu.Item key={2}>
-                    <Link
-                        onClick={() => this.toggleMobileMenuOpen()}
-                        to={`${PROJECTS.route}/tvF7OMS1g9omqcdHNvpo`}
-                    >
-                        {PROJECTS.link}
-                    </Link>
-                </Menu.Item>,
+        return [
+            <Menu.Item key={0}>
+                <Link
+                    onClick={() => this.toggleMobileMenuOpen()}
+                    to={HOME.route}
+                >
+                    {HOME.link}
+                </Link>
+            </Menu.Item>,
+            <Menu.Item key={1}>
+                <Link
+                    onClick={() => this.toggleMobileMenuOpen()}
+                    to={`${ACCOUNT.route}`}
+                >
+                    {ACCOUNT.link}
+                </Link>
+            </Menu.Item>,
+            <Menu.Item key={2}>
+                <Link
+                    onClick={() => this.toggleMobileMenuOpen()}
+                    to={`${PROJECTS.route}/tvF7OMS1g9omqcdHNvpo`}
+                >
+                    {PROJECTS.link}
+                </Link>
+            </Menu.Item>,
+            <Menu.Item key={3}>
+                <Link to={SIGN_IN.route}>
+                    {/*<Button ghost>*/}
+                    {SIGN_IN.link}
+                    {/*</Button>*/}
+                </Link>
+            </Menu.Item>
+        ]
 
-
-            ]
-        } else {
-            return (
-                <Menu.Item key={3}>
-                    <Link to={SIGN_IN.route}>
-                        <Button ghost>
-                            {SIGN_IN.link}
-                        </Button>
-                    </Link>
-                </Menu.Item>
-            )
-        }
     }
 
     renderUserLinks = () => {
-        let {isMobileMenu, authUser} = this.state
+        let {isMobileMenu} = this.state
         return (
             <Menu.Item
+                className={"menu-outline"}
                 style={{
                     float: 'right', display: 'flex',
-                    justifyContent: "space-around",
-                    alignItems: 'center', width: "180px"
+                    justifyContent: "flex-end",
+                    alignItems: 'center'
                 }}
             >
-                <a>
-                    <NotificationOutlined style={{fontSize: 20, color: 'white'}}/>
-                </a>
-                <a>
-                    <MessageOutlined
-                        style={{fontSize: 20, color: 'white'}}
-                    />
-                </a>
-                {isMobileMenu ?
-                    <Button type="primary" onClick={() =>
-                        this.toggleMobileMenuOpen()}
-                            size="large" style={{float: 'right'}}
-                            icon={<MenuOutlined/>}
+                {isMobileMenu &&
+                <Button type="link" onClick={() =>
+                    this.toggleMobileMenuOpen()}
+                        size="small" style={{float: 'right', paddingTop: 15}}
+                        icon={<MenuOutlined style={{fontSize: 30, color: 'white'}}/>}
 
-                    /> :
-                    <Avatar
-                        src={'https://nitish-sharma.in/img/userpic01.jpg'}
-                    />
+                />
                 }
             </Menu.Item>
         )
@@ -137,9 +119,17 @@ class AppHeader extends Component {
                         placement='left'
                         closable={false}
                         onClose={this.toggleMobileMenuOpen}
-                        getContainer={false}
+                    // getContainer={false}
                         style={{position: 'absolute'}}
-                        visible={!isMobileMenu?false:mobileMenuOpen}>
+                        bodyStyle={{paddingTop: 10, padding: 0}}
+                    // visible={true}
+                        visible={!isMobileMenu ? false : mobileMenuOpen}
+                        footer={
+                            <Link to={'logout'}>
+                                Logout
+                            </Link>
+                        }
+                >
                     <Menu>{this.renderNavLinks()}</Menu>
                 </Drawer>
                 <Header style={{

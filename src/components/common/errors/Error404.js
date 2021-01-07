@@ -7,7 +7,7 @@ class Error404 extends React.Component {
     render() {
         return (
             <AppBase noBreadcrumb={true}>
-                <Row style={{marginTop: '20px', textAlign: 'center'}} gutter={24}>
+                <Row style={{marginTop: '20px', textAlign: 'center'}}>
                     <Col span={24}>
                         <Result
                             status="404"
