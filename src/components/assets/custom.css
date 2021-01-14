@@ -23,18 +23,44 @@
     height: 100% !important;
 }
 
-* {
-    transition: all 0.3s ease-in-out;
-}
+/** {*/
+/*    transition: all 0.2s ease-in-out;*/
+/*}*/
 
 .ant-list-item .ant-row {
     width: 100%;
 }
 
-.mb-0 {
-    margin-bottom: 0px;
-}
-
 .menu-outline:hover {
     background-color: #021529 !important
 }
+
+/*
+footer css
+*/
+.footer {
+    background: #181828 url(https://get.clt.re/wp-content/uploads/2014/12/footer-background-01.jpg) no-repeat center;
+    background-size: cover;
+}
+.footer * {
+    color: white !important;
+}
+
+.footer a {
+    font-weight: 400;
+}
+.footer-list > li > a {
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.footer-list > li > a:hover {
+    color: #ffffff !important;
+    padding-left: 9px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
