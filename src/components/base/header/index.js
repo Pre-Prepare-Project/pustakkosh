@@ -119,16 +119,10 @@ class AppHeader extends Component {
                         placement='left'
                         closable={false}
                         onClose={this.toggleMobileMenuOpen}
-                    // getContainer={false}
                         style={{position: 'absolute'}}
                         bodyStyle={{paddingTop: 10, padding: 0}}
-                    // visible={true}
                         visible={!isMobileMenu ? false : mobileMenuOpen}
-                        footer={
-                            <Link to={'logout'}>
-                                Logout
-                            </Link>
-                        }
+                        footer={<Link to={'logout'}>Logout</Link>}
                 >
                     <Menu>{this.renderNavLinks()}</Menu>
                 </Drawer>
@@ -136,10 +130,11 @@ class AppHeader extends Component {
                     position: 'fixed', zIndex: 1, width: '100%',
                     padding: isMobileMenu ? '0' : '0 10%'
                 }}>
+
                     <Menu
                         theme="dark"
                         mode="horizontal"
-                        style={{lineHeight: '64px'}}
+                        style={{lineHeight: '64px', float: "right"}}
                         selectedKeys={[tab.toString()]}
                     >
                         {this.props.windowWidth >= 768 ?

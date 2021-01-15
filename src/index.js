@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 require('antd/dist/antd.min.css');
+require('./components/assets/theme-util.css');
 
 ReactDOM.render(
     <React.StrictMode>
