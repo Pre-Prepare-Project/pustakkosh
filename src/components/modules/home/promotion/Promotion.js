@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Layout, Typography, Button} from "antd";
+import {Layout, Typography, Button, Space, Row, Col} from "antd";
 import {ReadOutlined} from "@ant-design/icons"
-import { List, Card } from 'antd';
+import {List, Card} from 'antd';
 
 const data = [
     {
@@ -32,17 +32,21 @@ class Promotion extends Component {
                         used books to help these unprivileged kids. Books you throw in garbage or sell to raddiwala can
                         be easily donated to these kids which will help in shaping their future.</Title>
                     <Title className={'promotion-l4'} level={2}> What we accept.</Title>
-                    <Content className={'button-content'}>
-                    <Button type="primary" shape="round" color={"red"}>Donate Near You</Button>
-                    <Button type="primary" shape="round">Donate Books</Button>
-                    <Button type="primary" shape="round">Register as Donation Centre</Button>
-                    </Content>
+                    <Space align={'center'}>
+                        <Row>
+                            <Col>
+                            <Button type="primary" shape="round" color={"red"}>Donate Near You</Button>
+                            <Button type="primary" shape="round">Donate Books</Button>
+                            <Button type="primary" shape="round">Register as Donation Centre</Button>
+                            </Col>
+                        </Row>
+                    </Space>
                     <List
-                        grid={{ gutter: 16, column: 4 }}
+                        grid={{gutter: 16, column: 4}}
                         dataSource={data}
                         renderItem={item => (
                             <List.Item>
-                                <ReadOutlined />
+                                <ReadOutlined/>
                                 <br/>
                                 {item.title}
                             </List.Item>
