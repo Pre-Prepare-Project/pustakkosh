@@ -119,6 +119,7 @@ class AppHeader extends Component {
                         placement='left'
                         closable={false}
                         onClose={this.toggleMobileMenuOpen}
+                        headerStyle={{height:64}}
                         style={{position: 'absolute'}}
                         bodyStyle={{paddingTop: 10, padding: 0}}
                         visible={!isMobileMenu ? false : mobileMenuOpen}
@@ -126,15 +127,14 @@ class AppHeader extends Component {
                 >
                     <Menu>{this.renderNavLinks()}</Menu>
                 </Drawer>
-                <Header style={{
+                <Header className="bg-white" style={{
                     position: 'fixed', zIndex: 1, width: '100%',
                     padding: isMobileMenu ? '0' : '0 10%'
                 }}>
 
                     <Menu
-                        theme="dark"
                         mode="horizontal"
-                        style={{lineHeight: '64px', float: "right"}}
+                        style={{lineHeight: '55px', float: "right", border:'none'}}
                         selectedKeys={[tab.toString()]}
                     >
                         {this.props.windowWidth >= 768 ?

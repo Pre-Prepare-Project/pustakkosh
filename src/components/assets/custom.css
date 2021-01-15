@@ -35,9 +35,6 @@
     width: 100%;
 }
 
-.menu-outline:hover {
-    background-color: #021529 !important
-}
 
 .ant-typography {
     color: white !important;
@@ -110,3 +107,65 @@ footer css
     -o-transition: all 0.2s ease-in-out;
 }
 
+
+/*Header css*/
+.bg-white {
+    background: #ff0000 !important;
+}
+
+.ant-menu {
+    background: #ff0000 !important;
+}
+
+.ant-menu-item:active, .ant-menu-submenu-title:active {
+    background: #ff0000 !important;
+    color: #1d2fa5 !important;
+}
+
+.ant-drawer-body {
+    background: #ff0000 !important;
+}
+
+.menu-outline:hover {
+    background-color: #ff0000 !important
+}
+
+.ant-menu-item a {
+    color: #ffffff !important;
+}
+
+/*.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item:hover{*/
+/*    color: #ffffff !important;*/
+/*    border-bottom: 0 !important;*/
+/*}*/
+.ant-menu-horizontal > .ant-menu-item a {
+    background: #ff0000 !important;
+}
+
+.ant-menu-item-selected {
+    border-bottom: 0 !important;
+}
+
+.ant-menu-item-active {
+    border-color: #ff0000 !important;
+}
+.ant-menu-item-selected a{
+    color: #282c34 !important;
+}
+.ant-menu-item-active a {
+    color: #282c34 !important;
+}
+.ant-menu a{
+    font-size: 24px !important;
+}
+
+/*.ant-menu-item-selected:active {*/
+/*    border-bottom: 0 !important;*/
+/*}*/
+
+/*.ant-menu-item-selected:hover a{*/
+/*    color: #1d2fa5 !important;*/
+/*}*/
+/*.ant-menu-item:hover {*/
+/*    transition-duration: 0s !important;*/
+/*}*/
