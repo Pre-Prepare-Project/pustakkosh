@@ -14,7 +14,7 @@ class HomePage extends Component {
     render() {
         return (
             <AppBase username={this.state.name} email={this.state.email}>
-                <Promotion></Promotion>
+                <Promotion/>
             </AppBase>
         );
     }
