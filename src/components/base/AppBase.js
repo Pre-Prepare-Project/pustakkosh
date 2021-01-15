@@ -12,7 +12,7 @@ class AppBase extends Component {
                 <AppHeader {...this.props}/>
                 <Content
                     style={{
-                        minHeight: `calc(100vh - 70px)`,
+                        minHeight: `calc(100vh - 70px)`, paddingTop:64
                     }}>
                     {this.props.children}
                 </Content>

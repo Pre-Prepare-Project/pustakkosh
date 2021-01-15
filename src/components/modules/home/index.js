@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import AppBase from "../../base/AppBase";
+import Promotion from "./promotion/Promotion";
 
 class HomePage extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class HomePage extends Component {
     render() {
         return (
             <AppBase username={this.state.name} email={this.state.email}>
-                <h2>Home Page:-</h2>
+                <Promotion></Promotion>
             </AppBase>
         );
     }
