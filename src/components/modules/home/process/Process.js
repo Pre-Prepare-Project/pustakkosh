@@ -19,7 +19,7 @@ class Process extends Component {
     render() {
         return (
             <div style={{backgroundColor: "#757474"}}>
-                <div className={'main-container'} style={{marginTop: 20, paddingTop: 10, paddingBottom:10, marginBottom: 20}}>
+                <div className={'main-container'} style={{paddingTop: 10, paddingBottom:10}}>
                     <Steps current={1} progressDot={this.customDot} percent={100} responsive={"true"}>
                         <Step status="Fill" title="Step 1" description="Fill up the Form"/>
                         <Step status="Wait" title="Step 2" description="Our team will schedule the pick up"/>
